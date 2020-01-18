@@ -1,0 +1,35 @@
+.navbar {
+    max-width: 80%;
+    margin: auto;
+}
+
+.nav-item {
+    margin-left: 15px;
+}
+
+.jumbotron {
+    height: 400px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-sample {
+    width: 80%;
+    margin: auto;
+}
+
+.product-sample p {
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.product-images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-images img {
+    width: 47%;
+}
