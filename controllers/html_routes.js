@@ -29,12 +29,6 @@ router.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
 })
 
-module.exports = router;
-
-router.get("/", function(req, res) {
-    res.render("index")
-});
-
 router.get("/projects", function(req, res) {
     db.Project.findAll({
         raw: true,
