@@ -49,16 +49,3 @@ router.get("/api/user_data", function(req, res) {
 
 // export routes for server.js to use
 module.exports = router;
-var taskData = require('../app/data/tasks');
-
-module.exports = function(app) {
-    app.get("/api/tasks", function(req, res) {
-        res.json(taskData);
-    })
-
-    app.post("/api/tasks", function(req, res) {
-        taskData.push(req.body);
-        res.json(true);
-        console.log(taskData)
-    });
-}
