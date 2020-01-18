@@ -15,11 +15,11 @@ module.exports = function (sequelize, DataTypes) {
             onDelete: "cascade"
         });
 
-        Project.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Project.belongsTo(models.User, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
     };
 
     return Project;

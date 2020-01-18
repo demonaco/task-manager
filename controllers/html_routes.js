@@ -22,12 +22,12 @@ router.get("/projects", function (req, res) {
 });
 
 
-app.get("/task", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/task.html"))
-})
+// app.get("/task", function(req, res){
+//     res.sendFile(path.join(__dirname, "../public/task.html"))
+// })
 
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-})
+// app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+// })
 
 module.exports = router; 
