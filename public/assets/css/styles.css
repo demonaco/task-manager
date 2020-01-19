@@ -1,6 +1,12 @@
 .navbar {
     max-width: 80%;
     margin: auto;
+    background-color: #50697D ;
+    color: #D9CFE7;
+}
+
+.navbar-dark {
+    background-color: #50697D;
 }
 
 .nav-item {
@@ -13,6 +19,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    background-image: url(/public/assets/images/emma-matthews-digital-content-production-8K62atzbulQ-unsplash.jpg)
 }
 
 .product-sample {
@@ -32,4 +39,17 @@
 
 .product-images img {
     width: 47%;
+}
+
+.btn {
+    background-color: #D9CFE7;
+    color: #A8BCBA;
+
+    
+   
+}
+
+body{
+    background-color: #50697D;
+    color: #A8BCBA;
 }
