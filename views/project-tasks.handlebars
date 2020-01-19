@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-4" style="background-color:#D1DDDB;">
+        <h1> To Do </h1>
+        {{#each tasks}}
+        {{#equal status "to-do"}}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="#" class="btn btn-primary">View Task</a>
+            </div>
+        </div>
+        {{/equal}}
+        {{/each}}
+    </div>
+    <div class="col-sm-4" style="background-color:pink;">
+        <h1> In Progress </h1>
+        {{#each tasks}}
+        {{#equal status "in-progress"}}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="#" class="btn btn-primary">View Task</a>
+            </div>
+        </div>
+        {{/equal}}
+        {{/each}}
+    </div>
+    <div class="col-sm-4" style="background-color:#1D6A96;">
+        <h1> Done </h1>
+        {{#each tasks}}
+        {{#equal status "done"}}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="#" class="btn btn-primary">View Task</a>
+            </div>
+        </div>
+        {{/equal}}
+        {{/each}}
+    </div>
+</div>
+
+
+<button type="button" class="btn btn-primary">Create new Task</button>
