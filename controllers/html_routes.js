@@ -42,7 +42,7 @@ router.get("/projects", function (req, res) {
     });
 });
 
-router.get("/new", function (req, res) {
+router.get("/projects/new", function (req, res) {
     res.render("project-form");
 });
 

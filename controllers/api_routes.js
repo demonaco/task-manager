@@ -52,16 +52,15 @@ router.get("/api/user_data", function (req, res) {
 router.post("/api/projects", function (req, res) {
     db.Project.create({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
     })
         .then(function () {
-            console.log("hello, I'm a console log")
-            res.redirect(307, "/projects");
+            // res.redirect(307, "/projects");
+            res.json({});
         })
-        // .catch(function (err) {
-        //     console.log("oh, oh. something went wrong")
-        //     res.status(401).json(err);
-        // });
+        .catch(function (err) {
+            res.status(401).json(err);
+        });
 })
 
 // export routes for server.js to use
