@@ -3,37 +3,39 @@ var db = require("../models");
 var express = require("express")
 var router = express.Router()
 var passport = require("../config/passport");
+console.log("server.js is loading")
 //Requiring path to so we can use relative routes to our HTML files
 //Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated")
-    // Using the passport.authenticate middleware with our local strategy.
-    // If the user has valid login credentials, send them to the members page.
-    // Otherwise the user will be sent an error
-router.post("/api/login", passport.authenticate("local"), function(req, res) {
+// Using the passport.authenticate middleware with our local strategy.
+// If the user has valid login credentials, send them to the members page.
+// Otherwise the user will be sent an error
+router.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
 });
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
-router.post("/api/signup", function(req, res) {
+router.post("/api/signup", function (req, res) {
     db.User.create({
-            email: req.body.email,
-            password: req.body.password
-        })
-        .then(function() {
+        email: req.body.email,
+        password: req.body.password
+    })
+        .then(function () {
             res.redirect(307, "/api/login");
         })
-        .catch(function(err) {
+        .catch(function (err) {
             res.status(401).json(err);
         });
 });
 // Route for logging user out
-router.get("/logout", function(req, res) {
+router.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
 });
 // Route for getting some data about our user to be used client side
-router.get("/api/user_data", function(req, res) {
+router.get("/api/user_data", function (req, res) {
+    console.log("test route")
     if (!req.user) {
         // The user is not logged in, send back an empty object
         res.json({});
@@ -45,6 +47,20 @@ router.get("/api/user_data", function(req, res) {
             id: req.user.id
         });
     }
+})
+
+router.post("/api/projects", function (req, res) {
+    db.Project.create({
+        title: req.body.title,
+        description: req.body.description,
+    })
+        .then(function () {
+            // res.redirect(307, "/projects");
+            res.json({});
+        })
+        .catch(function (err) {
+            res.status(401).json(err);
+        });
 })
 
 // export routes for server.js to use
