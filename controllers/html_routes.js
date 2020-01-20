@@ -1,6 +1,6 @@
 var express = require("express");
 
-var db = require("../models")
+var db = require("../models");
 
 var router = express.Router();
 
@@ -46,12 +46,19 @@ router.get("/projects/new", function (req, res) {
     res.render("project-form");
 });
 
-// app.get("/task", function(req, res){
-//     res.sendFile(path.join(__dirname, "../public/task.html"))
-// })
+router.get("/projects/:id", function (req, res) {
+    db.Task.findAll({
+        raw: true,
+        where: {
+            ProjectId: req.params.id
+        }
+    }).then(function (data) {
+        var hbsObj = {
+            tasks: data
+        }
+        res.render("project-tasks", hbsObj);
+    });
+});
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/index.html"))
-// })
 
 module.exports = router;

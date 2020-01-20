@@ -20,7 +20,18 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+    helpers: {
+        equal: function (lvalue, rvalue, options) {
+            if (lvalue != rvalue) {
+                return options.inverse(this);
+            } else {
+                return options.fn(this);
+            }
+        }
+    }
+}));
 app.set("view engine", "handlebars");
 
 var htmlRoutes = require("./controllers/html_routes.js");
@@ -29,8 +40,8 @@ app.use(htmlRoutes);
 var apiRoutes = require("./controllers/api_routes");
 app.use(apiRoutes);
 
-db.sequelize.sync().then(function() {
-    app.listen(PORT, function() {
+db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
 });
