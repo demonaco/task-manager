@@ -1,6 +1,6 @@
 var express = require("express");
 
-var db = require("../models")
+var db = require("../models");
 
 var router = express.Router();
 
@@ -33,7 +33,9 @@ router.get("/login", function (req, res) {
 router.get("/projects", function (req, res) {
     db.Project.findAll({
         raw: true,
-        //TODO: where by user id 
+        // where: {
+        //     UserId: req.user.id
+        // }
     }).then(function (data) {
         var hbsObj = {
             projects: data
