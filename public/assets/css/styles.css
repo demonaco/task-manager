@@ -1,6 +1,16 @@
 .navbar {
     max-width: 80%;
     margin: auto;
+    background-color: #283B42 ;
+    color: #D1DDDB;
+}
+
+.nav-link {
+    color: #D1DDDB;
+}
+
+.navbar-dark {
+    background-color: #50697D;
 }
 
 .nav-item {
@@ -8,12 +18,22 @@
 }
 
 .jumbotron {
+    color: #D1DDDB;
+    background-image: url(/assets/images/haley-phelps-S-llxYh3GzI-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+/* .jumbotron {
     height: 400px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-}
+    background-image: url(/public/assets/images/emma-matthews-digital-content-production-8K62atzbulQ-unsplash.jpg)
+} */
 
 .product-sample {
     width: 80%;
@@ -32,4 +52,18 @@
 
 .product-images img {
     width: 47%;
+}
+
+.btn {
+    background-color: #1D6A96;
+    color: #D1DDDB;
+    border: #1D6A96;
+
+    
+   
+}
+
+body{
+    background-color: #1D6A96;
+    color: #A8BCBA;
 }
