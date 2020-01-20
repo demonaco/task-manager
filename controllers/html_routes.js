@@ -4,6 +4,8 @@ var db = require("../models")
 
 var router = express.Router();
 
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 router.get("/", function(req, res) {
     res.render("index");
 });
@@ -27,13 +29,9 @@ router.get("/login", function(req, res) {
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
-})
-
-module.exports = router;
-
-router.get("/", function(req, res) {
-    res.render("index")
 });
+
+
 
 router.get("/projects", function(req, res) {
     db.Project.findAll({

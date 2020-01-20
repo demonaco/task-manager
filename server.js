@@ -23,8 +23,8 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//var htmlRoutes = require("./controllers/html_routes.js");
-//app.use(htmlRoutes);
+var htmlRoutes = require("./controllers/html_routes.js");
+app.use(htmlRoutes);
 
 var apiRoutes = require("./controllers/api_routes");
 app.use(apiRoutes);

@@ -16,14 +16,17 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
 router.post("/api/signup", function(req, res) {
+    console.log("email=" + req.body.email)
     db.User.create({
             email: req.body.email,
             password: req.body.password
         })
         .then(function() {
+            console.log("redirecting to api/login")
             res.redirect(307, "/api/login");
         })
         .catch(function(err) {
+            console.log("setting 401 error.")
             res.status(401).json(err);
         });
 });
@@ -49,16 +52,3 @@ router.get("/api/user_data", function(req, res) {
 
 // export routes for server.js to use
 module.exports = router;
-var taskData = require('../app/data/tasks');
-
-module.exports = function(app) {
-    app.get("/api/tasks", function(req, res) {
-        res.json(taskData);
-    })
-
-    app.post("/api/tasks", function(req, res) {
-        taskData.push(req.body);
-        res.json(true);
-        console.log(taskData)
-    });
-}
