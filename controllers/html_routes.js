@@ -33,9 +33,13 @@ router.get("/login", function (req, res) {
 router.get("/projects", function (req, res) {
     db.Project.findAll({
         raw: true,
+<<<<<<< HEAD
         // where: {
         //     UserId: req.user.id
         // }
+=======
+        //TODO: where by user id 
+>>>>>>> 30a7dac3e529f2cbc74a2e19ad84d0f70f4922b2
     }).then(function (data) {
         var hbsObj = {
             projects: data
