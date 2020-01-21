@@ -1,6 +1,6 @@
 var express = require("express");
 
-var db = require("../models")
+var db = require("../models");
 
 var router = express.Router();
 
@@ -13,30 +13,32 @@ router.get("/", function(req, res) {
 router.get("/signup", function(req, res) {
     console.log("route get /")
         // If the user already has an account send them to the members page
-        //  if (req.user) {
-        //  res.redirect("/members");
-        // }
+    if (req.user) {
+        res.redirect("/projects");
+    }
     res.render("signup");
 });
+
 router.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-        res.redirect("/members");
+        res.redirect("/projects");
     }
     res.render("login");
 });
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
-router.get("/members", isAuthenticated, function(req, res) {
-    res.render("members");
-});
 
+// router.get("/members", isAuthenticated, function (req, res) {
+//     res.render("members");
+// })
 
-
-router.get("/projects", function(req, res) {
+router.get("/projects", isAuthenticated, function(req, res) {
     db.Project.findAll({
         raw: true,
-        //TODO: where by user id 
+        where: {
+            UserId: req.user.id
+        }
     }).then(function(data) {
         var hbsObj = {
             projects: data
@@ -45,13 +47,34 @@ router.get("/projects", function(req, res) {
     });
 });
 
+router.get("/projects/new", isAuthenticated, function(req, res) {
+    res.render("project-form");
+});
 
-// app.get("/task", function(req, res){
-//     res.sendFile(path.join(__dirname, "../public/task.html"))
-// })
+router.get("/projects/:id/new", isAuthenticated, function(req, res) {
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/index.html"))
-// })
+    var hbsObject = {
+        project_id: req.params.id
+    }
+    res.render("addTask", hbsObject);
+});
+
+
+router.get("/projects/:id", isAuthenticated, function(req, res) {
+    db.Task.findAll({
+        raw: true,
+        where: {
+            ProjectId: req.params.id
+        }
+    }).then(function(data) {
+        var hbsObj = {
+            tasks: data
+        }
+        res.render("project-tasks", hbsObj);
+    });
+});
+
+
+
 
 module.exports = router;

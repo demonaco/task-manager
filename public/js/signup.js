@@ -34,12 +34,12 @@ $(document).ready(function() {
             })
             .then(function(data) {
                 console.log("before then");
-                window.location.replace("/members");
+                window.location.replace("/projects");
                 console.log("after then")
                     // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(function(err) {
-                console.log("rdimri printing response=" + err.responseJSON);
+                console.log(" printing response=" + err.responseJSON);
             });
 
     }
