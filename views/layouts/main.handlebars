@@ -21,19 +21,29 @@
 <body>
     <header class="navbar-dark bg-dark">
         <nav class="navbar navbar-expand-lg">
-            <a href="#"> <img src="../assets/images/b2e5a12d-77af-4e10-82bf-e5fbb0d27b47_200x200.png" height="35" alt="logo" id="logo"></a>
+            <a href="#"> <img src="../assets/images/b2e5a12d-77af-4e10-82bf-e5fbb0d27b47_200x200.png" height="35"
+                    alt="logo" id="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown" id="links">
                 <ul class="nav nav-pills navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link topic" href="/signup">Sign Up</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link topic" href="/login">Login</a>
-                    </li>
+                    {{#if user}}
+                        <li class="nav-item active">
+                            <span class="nav-link topic"> Hello, {{user.email}}</span>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link topic" href="/logout">Logout</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item active">
+                            <a class="nav-link topic" href="/signup">Sign Up</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link topic" href="/login">Login</a>
+                        </li>
+                    {{/if}}
                 </ul>
             </div>
         </nav>

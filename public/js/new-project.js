@@ -7,7 +7,7 @@ $(document).ready(function() {
     console.log("hey, i'm some clientside javascript")
     $("#submit-btn").on("click", function(event) {
         event.preventDefault();
-        console.log("I was clicked!")
+
         var newProject = {
             title: $("#title").val().trim(),
             description: $("#description").val().trim()
