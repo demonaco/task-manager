@@ -1,3 +1,5 @@
+
+<div class="container">
 <div class="row">
     <div class="col-sm-4" style="background-color:#D1DDDB;">
         <h1> To Do </h1>
@@ -27,7 +29,7 @@
         {{/equal}}
         {{/each}}
     </div>
-    <div class="col-sm-4" style="background-color:#1D6A96;">
+    <div class="col-sm-4" style="background-color:bisque;">
         <h1> Done </h1>
         {{#each tasks}}
         {{#equal status "done"}}
@@ -43,5 +45,8 @@
     </div>
 </div>
 
-
-<button type="button" class="btn btn-primary">Create new Task</button>
+<div class="row justify-content-center">
+    <a href="/projects/:id/new" class="btn btn-primary" >Create new Task</a>
+<!--<button type="button" id="newtask" class="btn btn-primary">Create new Task</button>-->
+</div>
+</div>
