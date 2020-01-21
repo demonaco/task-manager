@@ -23,7 +23,7 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
     helpers: {
-        equal: function (lvalue, rvalue, options) {
+        equal: function(lvalue, rvalue, options) {
             if (lvalue != rvalue) {
                 return options.inverse(this);
             } else {
@@ -34,14 +34,15 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-var htmlRoutes = require("./controllers/html_routes.js");
-app.use(htmlRoutes);
-
 var apiRoutes = require("./controllers/api_routes");
 app.use(apiRoutes);
 
-db.sequelize.sync().then(function () {
-    app.listen(PORT, function () {
+var htmlRoutes = require("./controllers/html_routes.js");
+app.use(htmlRoutes);
+
+
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
 });

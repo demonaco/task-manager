@@ -25,7 +25,7 @@ $(document).ready(function() {
                 password: password
             })
             .then(function() {
-                window.location.replace("/members");
+                window.location.replace("/projects");
                 // If there's an error, log the error
             })
             .catch(function(err) {

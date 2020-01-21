@@ -1,6 +1,11 @@
-$(document).ready(function () {
+$(document).ready(function() {
+
+    $("#create-project").on("click", function(event) {
+        window.location.replace("/projects/new");
+    });
+
     console.log("hey, i'm some clientside javascript")
-    $("#submit-btn").on("click", function (event) {
+    $("#submit-btn").on("click", function(event) {
         event.preventDefault();
         console.log("I was clicked!")
         var newProject = {
@@ -11,7 +16,7 @@ $(document).ready(function () {
         $.ajax("/api/projects", {
             type: "POST",
             data: newProject
-        }).then(function () {
+        }).then(function(resp) {
             console.log("server responded to my request")
             window.location.replace("/projects");
         })

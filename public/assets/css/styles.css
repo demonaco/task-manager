@@ -1,7 +1,7 @@
 .navbar {
     max-width: 80%;
     margin: auto;
-    background-color: #283B42 ;
+    background-color: #283B42;
     color: #D1DDDB;
 }
 
@@ -24,7 +24,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-  }
+}
+
 
 /* .jumbotron {
     height: 400px;
@@ -58,12 +59,13 @@
     background-color: #1D6A96;
     color: #D1DDDB;
     border: #1D6A96;
-
-    
-   
 }
 
-body{
+body {
     background-color: #1D6A96;
     color: #A8BCBA;
+}
+
+.card {
+    background-color: pink;
 }
