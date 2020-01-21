@@ -5,7 +5,9 @@
     <p>Welcome, your life just got a whole lot easier to manage</p>
     <br>
     <br>
-    <button type="button" class="btn btn-primary btn-lg" href="/signup" role="button">Register Today</button>
+    {{#unless user}}
+    <a class="btn btn-primary btn-lg" href="/signup">Register Today</a>
+    {{/unless}}
   </div>
 </div>
 </div>
