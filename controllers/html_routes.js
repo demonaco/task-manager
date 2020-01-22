@@ -74,7 +74,8 @@ router.get("/projects/:id", isAuthenticated, function(req, res) {
     }).then(function(data) {
         var hbsObj = {
             tasks: data,
-            user: req.user
+            user: req.user,
+            project_id: req.params.id
         }
         res.render("project-tasks", hbsObj);
     });
