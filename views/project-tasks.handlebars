@@ -1,8 +1,9 @@
 
 <div class="container">
 <div class="row">
-    <div class="col-sm-4" style="background-color:#D1DDDB;">
-        <h1> To Do </h1>
+    <div class="col-sm-4">
+        <br>
+        <h1>To Do</h1>
         {{#each tasks}}
         {{#equal status "to-do"}}
         <div class="card">
@@ -16,6 +17,7 @@
         {{/each}}
     </div>
     <div class="col-sm-4" style="background-color:pink;">
+        <br>
         <h1> In Progress </h1>
         {{#each tasks}}
         {{#equal status "in-progress"}}
@@ -30,6 +32,7 @@
         {{/each}}
     </div>
     <div class="col-sm-4" style="background-color:bisque;">
+        <br>
         <h1> Done </h1>
         {{#each tasks}}
         {{#equal status "done"}}
