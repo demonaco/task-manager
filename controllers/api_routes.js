@@ -66,18 +66,19 @@ router.post("/api/projects", isAuthenticated, function(req, res) {
 });
 
 router.post("/api/projects/:id", isAuthenticated, function(req, res) {
-
-        db.Project.create({
+        db.Task.create({
                 title: req.body.title,
                 description: req.body.description,
-                due_date: req.body.date
+                due_date: req.body.date,
+                status: "to-do",
+                ProjectId: req.params.id
             })
             .then(function() {
                 // res.redirect(307, "/projects");
                 res.json({});
             })
             .catch(function(err) {
-                res.status(401).json(err);
+                res.status(400).json(err);
             });
     })
     // export routes for server.js to use
