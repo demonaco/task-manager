@@ -65,13 +65,12 @@ router.post("/api/projects", isAuthenticated, function(req, res) {
         });
 });
 
-router.post("/api/projects/:id/", isAuthenticated, function(req, res) {
-
+router.post("/api/projects/:id", isAuthenticated, function(req, res) {
         db.Task.create({
                 title: req.body.title,
                 description: req.body.description,
                 due_date: req.body.date,
-                status: webkitConvertPointFromPageToNode,
+                status: "to-do",
                 ProjectId: req.params.id
             })
             .then(function() {
@@ -79,7 +78,7 @@ router.post("/api/projects/:id/", isAuthenticated, function(req, res) {
                 res.json({});
             })
             .catch(function(err) {
-                res.status(401).json(err);
+                res.status(400).json(err);
             });
     })
     // export routes for server.js to use

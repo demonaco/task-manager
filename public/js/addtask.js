@@ -30,7 +30,7 @@ $(document).ready(function() {
             data: newTask
         }).then(function() {
             console.log("server responded to my request")
-            window.location.replace("/projects");
+            window.location.replace("/projects/"+ projectId);
         })
     });
 
