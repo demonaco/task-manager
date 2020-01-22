@@ -9,9 +9,6 @@
     color: #D1DDDB;
 }
 
-.navbar-dark {
-    background-color: #50697D;
-}
 
 .nav-item {
     margin-left: 15px;
@@ -25,16 +22,6 @@
     background-size: cover;
     height: 100vh;
 }
-
-
-/* .jumbotron {
-    height: 400px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-image: url(/public/assets/images/emma-matthews-digital-content-production-8K62atzbulQ-unsplash.jpg)
-} */
 
 .product-sample {
     width: 80%;
@@ -58,7 +45,8 @@
 .btn {
     background-color: #1D6A96;
     color: #D1DDDB;
-    border: #1D6A96;
+    /* border: #1D6A96; */
+    border: solid #85B8CB 2px;
 }
 
 body {
@@ -67,5 +55,54 @@ body {
 }
 
 .card {
-    background-color: pink;
+    background-color: #283B42;
+}
+
+.card-title {
+
+    color: #D1DDDB;
+
+}
+header {
+
+    background-color: #283B42;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#img {
+    border: 2px solid;
+    border-color: #85B8CB;
+}
+
+#getTo {
+    text-align: center;
+}
+
+footer {
+    height: 66px;
+    border-top: solid #85B8CB 2px;
+    background-color: #283B42;
+    text-align: center;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.btn:hover {
+    background-color: #1D6A96;
+    color: #D1DDDB;
+    /* border: #1D6A96; */
+    border: solid #85B8CB 2px;
 }
