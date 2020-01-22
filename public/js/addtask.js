@@ -25,7 +25,7 @@ $(document).ready(function() {
         };
 
 
-        $.ajax("api/projects/" + projectId, {
+        $.ajax("/api/projects/" + projectId, {
             type: "POST",
             data: newTask
         }).then(function() {

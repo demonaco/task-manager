@@ -65,12 +65,14 @@ router.post("/api/projects", isAuthenticated, function(req, res) {
         });
 });
 
-router.post("/api/projects/:id", isAuthenticated, function(req, res) {
+router.post("/api/projects/:id/", isAuthenticated, function(req, res) {
 
-        db.Project.create({
+        db.Task.create({
                 title: req.body.title,
                 description: req.body.description,
-                due_date: req.body.date
+                due_date: req.body.date,
+                status: webkitConvertPointFromPageToNode,
+                ProjectId: req.params.id
             })
             .then(function() {
                 // res.redirect(307, "/projects");

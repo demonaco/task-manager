@@ -6,7 +6,7 @@ var router = express.Router();
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res) {
     res.render("index", {
         user: req.user
     });
@@ -14,7 +14,7 @@ router.get("/", function (req, res) {
 
 router.get("/signup", function(req, res) {
     console.log("route get /")
-    // If the user already has an account send them to the members page
+        // If the user already has an account send them to the members page
     if (req.user) {
         return res.redirect("/projects");
     }
@@ -50,7 +50,7 @@ router.get("/projects", isAuthenticated, function(req, res) {
     });
 });
 
-router.get("/projects/new", isAuthenticated, function (req, res) {
+router.get("/projects/new", isAuthenticated, function(req, res) {
     res.render("project-form", {
         user: req.user
     });
@@ -59,7 +59,9 @@ router.get("/projects/new", isAuthenticated, function (req, res) {
 router.get("/projects/:id/new", isAuthenticated, function(req, res) {
 
     var hbsObject = {
+
         project_id: req.params.id
+
     }
     res.render("addTask", hbsObject);
 });
@@ -74,7 +76,8 @@ router.get("/projects/:id", isAuthenticated, function(req, res) {
     }).then(function(data) {
         var hbsObj = {
             tasks: data,
-            user: req.user
+            user: req.user,
+            project_id: req.params.id
         }
         res.render("project-tasks", hbsObj);
     });
