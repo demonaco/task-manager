@@ -1,58 +1,70 @@
-
 <div class="container">
-<div class="row">
-    <div class="col-sm-4">
-        <br>
-        <h1>To-Do</h1>
-        <hr>
-        {{#each tasks}}
-        {{#equal status "to-do"}}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-                <p class="card-text">{{description}}</p>
-                <a href="#" class="btn btn-primary">View Task</a>
+    <div class="row">
+        <div class="col-sm-4">
+            <br>
+            <h1>To Do</h1>
+            {{#each tasks}}
+            {{#equal status "to-do"}}
+            <div class="card" data-project-id = {{project_id}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <select class="target">
+                        <option value="{{id}}" data-status="to-do" selected="selected">To do</option>
+                        <option value="{{id}}" data-status="in-progress">In Progress</option>
+                        <option value="{{id}}" data-status="done">Done</option>
+                    </select>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
             </div>
+            {{/equal}}
+            {{/each}}
         </div>
-        {{/equal}}
-        {{/each}}
-    </div>
-    <div class="col-sm-4">
-        <br>
-        <h1> In Progress </h1>
-        <hr>
-        {{#each tasks}}
-        {{#equal status "in-progress"}}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-                <p class="card-text">{{description}}</p>
-                <a href="#" class="btn btn-primary">View Task</a>
+        <div class="col-sm-4">
+            <br>
+            <h1> In Progress </h1>
+            {{#each tasks}}
+            {{#equal status "in-progress"}}
+            <div class="card" data-project-id = {{project_id}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <select class="target">
+                        <option value="{{id}}" data-status="to-do" selected="selected">To do</option>
+                        <option value="{{id}}" data-status="in-progress">In Progress</option>
+                        <option value="{{id}}" data-status="done">Done</option>
+                    </select>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
             </div>
+            {{/equal}}
+            {{/each}}
         </div>
-        {{/equal}}
-        {{/each}}
-    </div>
-    <div class="col-sm-4">
-        <br>
-        <h1> Done </h1>
-        <hr>
-        {{#each tasks}}
-        {{#equal status "done"}}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-                <p class="card-text">{{description}}</p>
-                <a href="#" class="btn btn-primary">View Task</a>
-            </div>
-        </div>
-        {{/equal}}
-        {{/each}}
-    </div>
-</div>
+        <div class="col-sm-4">
+            <br>
+            <h1> Done </h1>
+            {{#each tasks}}
+            {{#equal status "done"}}
+            <div class="card" data-project-id = {{project_id}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <select class="target">
+                        <option value="{{id}}" data-status="to-do">To do</option>
+                        <option value="{{id}}" data-status="in-progress">In Progress</option>
+                        <option value="{{id}}" data-status="done" selected="selected">Done</option>
+                    </select>
 
-<div class="row justify-content-center">
-    <a href="/projects/{{project_id}}/new" class="btn btn-primary" >Create new Task</a>
-<!--<button type="button" id="newtask" class="btn btn-primary">Create new Task</button>-->
-</div>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            {{/equal}}
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <a href="/projects/{{project_id}}/new" class="btn btn-primary">Create new Task</a>
+        <!--<button type="button" id="newtask" class="btn btn-primary">Create new Task</button>-->
+    </div>
 </div>
