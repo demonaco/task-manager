@@ -3,7 +3,8 @@
 <div class="row">
     <div class="col-sm-4">
         <br>
-        <h1>To Do</h1>
+        <h1>To-Do</h1>
+        <hr>
         {{#each tasks}}
         {{#equal status "to-do"}}
         <div class="card">
@@ -16,9 +17,10 @@
         {{/equal}}
         {{/each}}
     </div>
-    <div class="col-sm-4" style="background-color:pink;">
+    <div class="col-sm-4">
         <br>
         <h1> In Progress </h1>
+        <hr>
         {{#each tasks}}
         {{#equal status "in-progress"}}
         <div class="card">
@@ -31,9 +33,10 @@
         {{/equal}}
         {{/each}}
     </div>
-    <div class="col-sm-4" style="background-color:bisque;">
+    <div class="col-sm-4">
         <br>
         <h1> Done </h1>
+        <hr>
         {{#each tasks}}
         {{#equal status "done"}}
         <div class="card">

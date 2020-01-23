@@ -56,6 +56,8 @@ body {
 
 .card {
     background-color: #283B42;
+    margin-top: 10px;
+    border: 2px solid #85B8CB;
 }
 
 .card-title {
@@ -105,4 +107,14 @@ footer {
     color: #D1DDDB;
     /* border: #1D6A96; */
     border: solid #85B8CB 2px;
+}
+
+hr {
+    background-color: #85B8CB;
+    height: 2px;    
+}
+
+#projectCard {
+    margin-top: 3em;
+    margin-left: 5em;
 }
