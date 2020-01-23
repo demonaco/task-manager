@@ -60,8 +60,8 @@ router.get("/projects/:id/new", isAuthenticated, function(req, res) {
 
     var hbsObject = {
 
-        project_id: req.params.id
-
+        project_id: req.params.id,
+        user: req.user
     }
     res.render("addTask", hbsObject);
 });
