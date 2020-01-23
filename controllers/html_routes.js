@@ -59,7 +59,6 @@ router.get("/projects/new", isAuthenticated, function(req, res) {
 router.get("/projects/:id/new", isAuthenticated, function(req, res) {
 
     var hbsObject = {
-
         project_id: req.params.id,
         user: req.user
     }
