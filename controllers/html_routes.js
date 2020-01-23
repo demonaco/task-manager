@@ -6,22 +6,22 @@ var router = express.Router();
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res) {
     res.render("index", {
         user: req.user
     });
 });
 
-router.get("/signup", function (req, res) {
+router.get("/signup", function(req, res) {
     console.log("route get /")
-    // If the user already has an account send them to the members page
+        // If the user already has an account send them to the members page
     if (req.user) {
         return res.redirect("/projects");
     }
     res.render("signup");
 });
 
-router.get("/login", function (req, res) {
+router.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
         return res.redirect("/projects");
@@ -35,13 +35,13 @@ router.get("/login", function (req, res) {
 //     res.render("members");
 // })
 
-router.get("/projects", isAuthenticated, function (req, res) {
+router.get("/projects", isAuthenticated, function(req, res) {
     db.Project.findAll({
         raw: true,
         where: {
             UserId: req.user.id
         }
-    }).then(function (data) {
+    }).then(function(data) {
         var hbsObj = {
             projects: data,
             user: req.user
@@ -50,13 +50,13 @@ router.get("/projects", isAuthenticated, function (req, res) {
     });
 });
 
-router.get("/projects/new", isAuthenticated, function (req, res) {
+router.get("/projects/new", isAuthenticated, function(req, res) {
     res.render("project-form", {
         user: req.user
     });
 });
 
-router.get("/projects/:id/new", isAuthenticated, function (req, res) {
+router.get("/projects/:id/new", isAuthenticated, function(req, res) {
 
     var hbsObject = {
         project_id: req.params.id,
@@ -66,13 +66,13 @@ router.get("/projects/:id/new", isAuthenticated, function (req, res) {
 });
 
 
-router.get("/projects/:id", isAuthenticated, function (req, res) {
+router.get("/projects/:id", isAuthenticated, function(req, res) {
     db.Task.findAll({
         raw: true,
         where: {
             ProjectId: req.params.id
         }
-    }).then(function (data) {
+    }).then(function(data) {
         var hbsObj = {
             tasks: data,
             user: req.user,
