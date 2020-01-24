@@ -25,7 +25,7 @@ $(document).ready(function() {
         event.preventDefault();
         var project_id = $(this).attr("data-project-id")
         var task_id = $(this).val()
-        var status = $(".target option:selected").attr("data-status")
+        var status = $("option:selected", this).attr("data-status");
 
         var obj = { data: status }
         $.ajax("/api/projects/" + project_id + "/tasks/" + task_id, {
