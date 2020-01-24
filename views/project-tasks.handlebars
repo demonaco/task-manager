@@ -3,6 +3,7 @@
         <div class="col-sm-4">
             <br>
             <h1>To Do</h1>
+            <hr>
             {{#each tasks}}
             {{#equal status "to-do"}}
             <div class="card" data-project-id = {{project_id}}>
@@ -23,6 +24,7 @@
         <div class="col-sm-4">
             <br>
             <h1> In Progress </h1>
+            <hr>
             {{#each tasks}}
             {{#equal status "in-progress"}}
             <div class="card" data-project-id = {{project_id}}>
@@ -43,6 +45,7 @@
         <div class="col-sm-4">
             <br>
             <h1> Done </h1>
+            <hr>
             {{#each tasks}}
             {{#equal status "done"}}
             <div class="card" data-project-id = {{project_id}}>
@@ -62,9 +65,9 @@
             {{/each}}
         </div>
     </div>
-
+<br>
     <div class="row justify-content-center">
-        <a href="/projects/{{project_id}}/new" class="btn btn-primary">Create new Task</a>
+        <a href="/projects/{{project_id}}/new" class="btn btn-primary" id="projectsBtn">Create new Task</a>
         <!--<button type="button" id="newtask" class="btn btn-primary">Create new Task</button>-->
     </div>
 </div>
