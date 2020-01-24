@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     console.log("hey, i'm some clientside javascript")
-    $("#submit-btn").on("click", function(event) {
+    $("#project-form").on("submit", function(event) {
         event.preventDefault();
 
         var newProject = {
