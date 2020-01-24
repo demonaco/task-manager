@@ -68,6 +68,7 @@ body {
 header {
 
     background-color: #283B42;
+    border-bottom: 2px solid #85B8CB;
 }
 
 p {
@@ -99,6 +100,10 @@ footer {
     text-align: center;
     font-size: 11px;
     font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
     
 }
 
@@ -117,4 +122,22 @@ hr {
 #projectCard {
     margin-top: 3em;
     margin-left: 5em;
+}
+
+#projectBtn {
+margin-left: 70%;
+margin-bottom: 5%;
+background-color: #283B42;
+border: solid 2px #85B8CB;
+
+}
+
+#projectsBtn {
+    background-color: #283B42;
+    border: solid 2px #85B8CB; 
+}
+
+#projectDescBtn {
+    background-color: #283B42;
+    border: solid 2px #85B8CB; 
 }
