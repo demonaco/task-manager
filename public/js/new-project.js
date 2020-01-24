@@ -20,6 +20,16 @@ $(document).ready(function() {
             console.log("server responded to my request")
             window.location.replace("/projects");
         })
-    })
+    });
+    $("#deleteProject").on("click", function(event) {
+        event.preventDefault();
+        var project_id = $(this).attr("projectId");
+
+        $.ajax("/api/projects/" + project_id, {
+            type: "DELETE"
+        }).then(function() {
+            window.location.reload();
+        });
+    });
 
 });
