@@ -1,9 +1,9 @@
 console.log("javascript loaded addtask")
-$(document).ready(function () {
+$(document).ready(function() {
 
     $("#date").datepicker();
 
-    $("#task-form").on("submit", function (event) {
+    $("#task-form").on("submit", function(event) {
         event.preventDefault();
         var projectId = $("#task-form").attr("data-project-id");
         var newTask = {
@@ -15,13 +15,13 @@ $(document).ready(function () {
         $.ajax("/api/projects/" + projectId, {
             type: "POST",
             data: newTask
-        }).then(function () {
+        }).then(function() {
             window.location.replace("/projects/" + projectId);
         })
     });
 
 
-    $(".target").change(function () {
+    $(".target").change(function() {
         event.preventDefault();
         var project_id = $(this).attr("data-project-id")
         var task_id = $(this).val()
@@ -32,23 +32,22 @@ $(document).ready(function () {
             type: "PUT",
             data: obj
 
-        }).then(function () {
+        }).then(function() {
             location.reload();
         });
     });
 
-    $(".delete").on("click", function (event) {
+    $(".delete").on("click", function(event) {
         console.log("Delete was clicked");
         event.preventDefault();
-        // var project_id = $(this).attr("data-project-id");
 
         var task_id = $(this).attr("taskId");
 
         $.ajax({
-            method: "DELETE",
-            url: "/api/projects/tasks/" + task_id
-        })
-            .then(function () {
+                method: "DELETE",
+                url: "/api/projects/tasks/" + task_id
+            })
+            .then(function() {
                 location.reload();
             });
     });
