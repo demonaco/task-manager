@@ -42,7 +42,7 @@
                         <option value="{{id}}" data-status="in-progress" selected="selected">In Progress</option>
                         <option value="{{id}}" data-status="done">Done</option>
                     </select>
-                    <button id="delete" class="btn btn-danger">Delete</button>
+                    <button taskId="{{id}}" class="btn btn-danger delete">Delete</button>
                 </div>
             </div>
             {{/equal}}
@@ -65,7 +65,7 @@
                         <option value="{{id}}" data-status="done" selected="selected">Done</option>
                     </select>
 
-                    <button id="delete" class="btn btn-danger">Delete</button>
+                    <button taskId="{{id}}" class="btn btn-danger delete">Delete</button>
                 </div>
             </div>
             {{/equal}}
