@@ -11,7 +11,9 @@ You can view, update, delete or add(CRUD operations) your tasks and projects.
 ## Built With
 
 ***Frontend***
+- HTML
 - Handlebars
+- Codepen
 - CSS
 - Bootstrap
 - Javascript
@@ -24,8 +26,10 @@ You can view, update, delete or add(CRUD operations) your tasks and projects.
 - **express-session**
 - **body-parser**
 - **express-handlebars**
+- **dotenv**
 - **passport**
 - **bcryptjs**
+- **mysql2**
 - **sequalize** for database
 - **moment**
 - Heroku for deployment
