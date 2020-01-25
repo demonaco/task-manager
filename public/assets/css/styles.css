@@ -122,6 +122,7 @@ hr {
 #projectCard {
     margin-top: 3em;
     margin-left: 5em;
+    display: inline-block;
 }
 
 #projectBtn {
@@ -137,7 +138,7 @@ border: solid 2px #85B8CB;
     border: solid 2px #85B8CB; 
 }
 
-#projectDescBtn {
+#submit-btn {
     background-color: #283B42;
     border: solid 2px #85B8CB; 
 }
