@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="row justify-content-center">
+        <a href="/projects/{{project_id}}/new" class="btn btn-primary" id="projectsBtn">Create new Task</a>
+    </div>
+
     <div class="row">
         <div class="col-sm-4">
             <br>
@@ -6,10 +10,11 @@
             <hr>
             {{#each tasks}}
             {{#equal status "to-do"}}
-            <div class="card" data-project-id = {{project_id}}>
+            <div class="card" data-project-id={{project_id}}>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
+                    <p style="text-align: center;"> Due Date: {{readableDate due_date}}</p>
                     <select class="target">
                         <option value="{{id}}" data-status="to-do" selected="selected">To do</option>
                         <option value="{{id}}" data-status="in-progress">In Progress</option>
@@ -27,16 +32,17 @@
             <hr>
             {{#each tasks}}
             {{#equal status "in-progress"}}
-            <div class="card" data-project-id = {{project_id}}>
+            <div class="card" data-project-id={{project_id}}>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
+                    <p style="text-align: center;"> Due Date: {{readableDate due_date}}</p>
                     <select class="target">
-                        <option value="{{id}}" data-status="to-do" >To do</option>
+                        <option value="{{id}}" data-status="to-do">To do</option>
                         <option value="{{id}}" data-status="in-progress" selected="selected">In Progress</option>
                         <option value="{{id}}" data-status="done">Done</option>
                     </select>
-                    <button id= "delete" class="btn btn-danger">Delete</button>
+                    <button taskId="{{id}}" class="btn btn-danger delete">Delete</button>
                 </div>
             </div>
             {{/equal}}
@@ -48,26 +54,26 @@
             <hr>
             {{#each tasks}}
             {{#equal status "done"}}
-            <div class="card" data-project-id = {{project_id}}>
+            <div class="card" data-project-id={{project_id}}>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
+                    <p style="text-align: center;"> Due Date: {{readableDate due_date}}</p>
                     <select class="target">
                         <option value="{{id}}" data-status="to-do">To do</option>
                         <option value="{{id}}" data-status="in-progress">In Progress</option>
                         <option value="{{id}}" data-status="done" selected="selected">Done</option>
                     </select>
 
-                    <button id= "delete" class="btn btn-danger">Delete</button>
+                    <button taskId="{{id}}" class="btn btn-danger delete">Delete</button>
                 </div>
             </div>
             {{/equal}}
             {{/each}}
         </div>
     </div>
-<br>
+
     <div class="row justify-content-center">
-        <a href="/projects/{{project_id}}/new" class="btn btn-primary" id="projectsBtn">Create new Task</a>
-        <!--<button type="button" id="newtask" class="btn btn-primary">Create new Task</button>-->
+        <a href="/projects/" class="btn btn-primary" id="projectsBtn">Back to Dashboard</a>
     </div>
 </div>
