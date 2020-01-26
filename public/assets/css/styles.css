@@ -120,8 +120,10 @@ hr {
 }
 
 #projectCard {
-    margin-top: 3em;
-    margin-left: 5em;
+    /* margin-top: 3em;
+    margin-left: 5em; */
+    margin-bottom: 1em;
+     margin-right: 3em;
     display: inline-block;
 }
 
@@ -136,9 +138,22 @@ border: solid 2px #85B8CB;
 #projectsBtn {
     background-color: #283B42;
     border: solid 2px #85B8CB; 
+    margin-top: 1em;
 }
 
 #submit-btn {
     background-color: #283B42;
     border: solid 2px #85B8CB; 
+}
+
+#projDash {
+ margin-top: 1em;
+    margin-right: 2em;
+    text-align: center;
+}
+
+#dashBtn {
+    background-color: #283B42;
+    border: solid 2px #85B8CB; 
+    margin-bottom: 1em;
 }
