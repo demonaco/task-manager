@@ -43,56 +43,21 @@ You can view, update, delete or add(CRUD operations) your tasks and projects.
 User name and password is stored in user model in the database. We have used bcrypt for encryption, which hashes the password before saving.
 Now whenever user logs in, unhashed password entered by the user can be compared to the hashed password stored in our database.
 
+![image](https://user-images.githubusercontent.com/54960706/73137226-bfcdaf00-400a-11ea-8632-e6069feacaf6.png)
 
 
-```
-var bcrypt = require("bcryptjs");
-
-module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-        // The email cannot be null, and must be a proper email before creation
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
-        },
-        // The password cannot be null
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    });
-User.prototype.validPassword = function(password) {
-        return bcrypt.compareSync(password, this.password);
-    };
-    
-    User.addHook("beforeCreate", function(user) {
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-    });
-    return User;
-};
-
-```
 Api route to create new project
 
-```
-router.post("/api/projects", isAuthenticated, function(req, res) {
+![image](https://user-images.githubusercontent.com/54960706/73137180-4930b180-400a-11ea-9780-da7b4c873712.png)
 
-    db.Project.create({
-            title: req.body.title,
-            description: req.body.description,
-            UserId: req.user.id
-        })
-        .then(function() {
-            // res.redirect(307, "/projects");
-            res.json({});
-        })
-        .catch(function(err) {
-            res.status(401).json(err);
-        });
-});
+Html route to display project
 
-```
+![image](https://user-images.githubusercontent.com/54960706/73137266-310d6200-400b-11ea-8e6f-fc7c92b28fd2.png)
+
+Client side Javascript to create a new project
+
+![image](https://user-images.githubusercontent.com/54960706/73137333-d0325980-400b-11ea-9c8d-114c360e3cfe.png)
+
+Javascript to change the status of the task
+
+![image](https://user-images.githubusercontent.com/54960706/73137384-3a4afe80-400c-11ea-84da-44b89a455882.png)
