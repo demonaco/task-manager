@@ -9,7 +9,6 @@
     color: #D1DDDB;
 }
 
-
 .nav-item {
     margin-left: 15px;
 }
@@ -58,15 +57,14 @@ body {
     background-color: #283B42;
     margin-top: 10px;
     border: 2px solid #85B8CB;
+    width: 100%;
 }
 
 .card-title {
-
     color: #D1DDDB;
-
 }
-header {
 
+header {
     background-color: #283B42;
     border-bottom: 2px solid #85B8CB;
 }
@@ -78,7 +76,6 @@ p {
 h1 {
     font-family: 'Montserrat', sans-serif;
 }
-
 
 label {
     font-family: 'Montserrat', sans-serif;
@@ -104,7 +101,6 @@ footer {
     margin: 0 auto;
     bottom: 0;
     width: 100%;
-    
 }
 
 .btn:hover {
@@ -116,7 +112,7 @@ footer {
 
 hr {
     background-color: #85B8CB;
-    height: 2px;    
+    height: 2px;
 }
 
 #projectCard {
@@ -126,19 +122,18 @@ hr {
 }
 
 #projectBtn {
-margin-left: 70%;
-margin-bottom: 5%;
-background-color: #283B42;
-border: solid 2px #85B8CB;
-
+    margin-left: 70%;
+    margin-bottom: 5%;
+    background-color: #283B42;
+    border: solid 2px #85B8CB;
 }
 
 #projectsBtn {
     background-color: #283B42;
-    border: solid 2px #85B8CB; 
+    border: solid 2px #85B8CB;
 }
 
 #submit-btn {
     background-color: #283B42;
-    border: solid 2px #85B8CB; 
+    border: solid 2px #85B8CB;
 }

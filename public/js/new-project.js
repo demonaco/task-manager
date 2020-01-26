@@ -4,7 +4,6 @@ $(document).ready(function() {
         window.location.replace("/projects/new");
     });
 
-    console.log("hey, i'm some clientside javascript")
     $("#project-form").on("submit", function(event) {
         event.preventDefault();
 
@@ -21,6 +20,7 @@ $(document).ready(function() {
             window.location.replace("/projects");
         })
     });
+    
     $("#deleteProject").on("click", function(event) {
         event.preventDefault();
         var project_id = $(this).attr("projectId");
