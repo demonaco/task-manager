@@ -4,6 +4,8 @@ Instead of getting stressed about your to do list, you can securely make an acco
 You can view, update, delete or add(CRUD operations) your tasks and projects.
 
 ### App-Demo
+![image](https://user-images.githubusercontent.com/54960706/73137458-26ec6300-400d-11ea-809b-699be9fc3b59.png)
+
 
 
 ### Link to the app
@@ -58,6 +60,6 @@ Client side Javascript to create a new project
 
 ![image](https://user-images.githubusercontent.com/54960706/73137333-d0325980-400b-11ea-9c8d-114c360e3cfe.png)
 
-Javascript to change the status of the task
+Javascript to change the status of a task
 
 ![image](https://user-images.githubusercontent.com/54960706/73137384-3a4afe80-400c-11ea-84da-44b89a455882.png)
