@@ -4,7 +4,7 @@ Instead of getting stressed about your to do list, you can securely make an acco
 You can view, update, delete or add(CRUD operations) your tasks and projects.
 
 ### App-Demo
-![](\public\assets\images\taskify.gif)
+![](public/assets/images/taskify.gif)
 
 
 ### Link to the app
@@ -24,7 +24,7 @@ You can view, update, delete or add(CRUD operations) your tasks and projects.
 ***Backend***
 - Nodejs
 - Npmjs packages: 
-- **express**  if you want to know more about it https://www.npmjs.com/package/express
+- **express**  
 - **express-session**
 - **body-parser**
 - **express-handlebars**
@@ -63,3 +63,17 @@ Client side Javascript to create a new project
 Javascript to change the status of a task
 
 ![image](https://user-images.githubusercontent.com/54960706/73137384-3a4afe80-400c-11ea-84da-44b89a455882.png)
+
+## Authors
+
+Leticia Roncero
+Github https://github.com/leticiaroncero
+Linkedin https://www.linkedin.com/in/leticiaroncero/?locale=en_US
+
+Shipra Dyundi
+Github https://github.com/ShipraD25
+Linkedin https://www.linkedin.com/in/shipra-dyundi-01ba0b14b/
+
+MAtt DeMonaco
+Github https://github.com/demonaco
+Linkedin
