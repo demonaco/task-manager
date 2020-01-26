@@ -4,7 +4,7 @@ Instead of getting stressed about your to do list, you can securely make an acco
 You can view, update, delete or add(CRUD operations) your tasks and projects.
 
 ### App-Demo
-![image](https://user-images.githubusercontent.com/54960706/73137458-26ec6300-400d-11ea-809b-699be9fc3b59.png)
+https://files.slack.com/files-pri/TMPCBJ70T-FT6C41FK8/taskify.gif
 
 
 
