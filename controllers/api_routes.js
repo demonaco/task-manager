@@ -1,4 +1,3 @@
-console.log("api routes loaded")
 var db = require("../models");
 var express = require("express")
 var router = express.Router()
@@ -51,7 +50,7 @@ router.get("/api/user_data", isAuthenticated, function(req, res) {
 })
 
 router.post("/api/projects", isAuthenticated, function(req, res) {
-    console.log("create project", req.user);
+
     db.Project.create({
             title: req.body.title,
             description: req.body.description,
