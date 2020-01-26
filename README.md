@@ -67,13 +67,13 @@ Javascript to change the status of a task
 ## Authors
 
 Leticia Roncero
-Github https://github.com/leticiaroncero
-Linkedin https://www.linkedin.com/in/leticiaroncero/?locale=en_US
+- Github https://github.com/leticiaroncero
+- Linkedin https://www.linkedin.com/in/leticiaroncero/?locale=en_US
 
 Shipra Dyundi
-Github https://github.com/ShipraD25
-Linkedin https://www.linkedin.com/in/shipra-dyundi-01ba0b14b/
+- Github https://github.com/ShipraD25
+- Linkedin https://www.linkedin.com/in/shipra-dyundi-01ba0b14b/
 
 MAtt DeMonaco
-Github https://github.com/demonaco
-Linkedin
+- Github https://github.com/demonaco
+- Linkedin
