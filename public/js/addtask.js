@@ -37,6 +37,7 @@ $(document).ready(function() {
     });
 
     $(".delete").on("click", function(event) {
+
         event.preventDefault();
 
         var task_id = $(this).attr("taskId");
