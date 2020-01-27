@@ -1,11 +1,10 @@
-console.log("api routes loaded")
 var db = require("../models");
 var express = require("express")
 var router = express.Router()
 var passport = require("../config/passport");
-console.log("server.js is loading")
-    //Requiring path to so we can use relative routes to our HTML files
-    //Requiring our custom middleware for checking if a user is logged in
+
+//Requiring path to so we can use relative routes to our HTML files
+//Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated")
     // Using the passport.authenticate middleware with our local strategy.
     // If the user has valid login credentials, send them to the members page.
@@ -51,7 +50,7 @@ router.get("/api/user_data", isAuthenticated, function(req, res) {
 })
 
 router.post("/api/projects", isAuthenticated, function(req, res) {
-    console.log("create project", req.user);
+
     db.Project.create({
             title: req.body.title,
             description: req.body.description,

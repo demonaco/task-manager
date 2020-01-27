@@ -2,7 +2,7 @@ var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-var bodyParser = require("body-parser");
+//var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var moment = require('moment');
 
@@ -24,7 +24,7 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
     helpers: {
-        equal: function (lvalue, rvalue, options) {
+        equal: function(lvalue, rvalue, options) {
             if (lvalue != rvalue) {
                 return options.inverse(this);
             } else {
@@ -32,7 +32,7 @@ app.engine("handlebars", exphbs({
             }
         },
 
-        readableDate: function (date) {
+        readableDate: function(date) {
             return moment(date).format('YYYY-MM-DD');
         }
     }
@@ -46,8 +46,8 @@ var htmlRoutes = require("./controllers/html_routes.js");
 app.use(htmlRoutes);
 
 
-db.sequelize.sync().then(function () {
-    app.listen(PORT, function () {
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
 });
