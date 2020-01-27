@@ -1,4 +1,3 @@
-console.log("javascript loaded addtask")
 $(document).ready(function() {
 
     $("#date").datepicker();
@@ -38,7 +37,6 @@ $(document).ready(function() {
     });
 
     $(".delete").on("click", function(event) {
-        console.log("Delete was clicked");
         event.preventDefault();
 
         var task_id = $(this).attr("taskId");
