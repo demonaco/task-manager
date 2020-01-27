@@ -17,14 +17,12 @@ $(document).ready(function() {
             type: "POST",
             data: newProject
         }).then(function(resp) {
-            console.log("server responded to my request")
             window.location.replace("/projects");
         })
     });
 
 
     $(document).on("click", "#deleteProject", function(event) {
-        console.log("your in delete function")
         event.preventDefault();
         var project_id = $(this).attr("projectId");
 

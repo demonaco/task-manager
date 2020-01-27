@@ -4,14 +4,14 @@
     <a href="/projects/new" class="btn btn-primary" id="projectBtn">Create new project</a>
   </div>
 
-{{#each projects}}
-<div class="card" style="width: 18rem;" id="projectCard">
-  <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{description}}</p>
-    <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
-    <button projectId="{{id}}" class="btn btn-primary deleteProject">Delete</button>
+  {{#each projects}}
+  <div class="card" style="width: 18rem;" id="projectCard">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+      <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
+      <button projectId="{{id}}" class="btn btn-primary deleteProject">Delete</button>
+    </div>
   </div>
-</div>
   {{/each}}
 </div>
