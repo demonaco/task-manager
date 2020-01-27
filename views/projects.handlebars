@@ -1,16 +1,18 @@
 <h1 id="projDash">Project Dashboard</h1>
 <div class="container">
-<a href="/projects/new" class="btn btn-primary" id="projectBtn">Create new project</a>
-
-{{#each projects}}
-<div class="card" style="width: 18rem;" id="projectCard">
-  <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{description}}</p>
-    <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
-    <button projectId="{{id}}" class="btn btn-primary" id="deleteProject">Delete</button>
+  <div class="btn-container">
+    <a href="/projects/new" class="btn btn-primary" id="projectBtn">Create new project</a>
   </div>
-</div>
 
-{{/each}}
+  {{#each projects}}
+  <div class="card" style="width: 18rem;" id="projectCard">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+      <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
+      <button projectId="{{id}}" class="btn btn-primary" id="deleteProject">Delete</button>
+    </div>
+  </div>
+
+  {{/each}}
 </div>

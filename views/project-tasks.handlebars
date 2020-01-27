@@ -4,9 +4,9 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <br>
-            <h1>To Do</h1>
+            <h1 class="col-title">To Do</h1>
             <hr>
             {{#each tasks}}
             {{#equal status "to-do"}}
@@ -26,9 +26,9 @@
             {{/equal}}
             {{/each}}
         </div>
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <br>
-            <h1> In Progress </h1>
+            <h1 class="col-title"> In Progress </h1>
             <hr>
             {{#each tasks}}
             {{#equal status "in-progress"}}
@@ -48,9 +48,9 @@
             {{/equal}}
             {{/each}}
         </div>
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <br>
-            <h1> Done </h1>
+            <h1 class="col-title"> Done </h1>
             <hr>
             {{#each tasks}}
             {{#equal status "done"}}
