@@ -35,7 +35,6 @@ router.get("/logout", function(req, res) {
 });
 // Route for getting some data about our user to be used client side
 router.get("/api/user_data", isAuthenticated, function(req, res) {
-    console.log("test route")
     if (!req.user) {
         // The user is not logged in, send back an empty object
         res.json({});
@@ -57,7 +56,6 @@ router.post("/api/projects", isAuthenticated, function(req, res) {
             UserId: req.user.id
         })
         .then(function() {
-            // res.redirect(307, "/projects");
             res.json({});
         })
         .catch(function(err) {
@@ -74,7 +72,6 @@ router.post("/api/projects/:id", isAuthenticated, function(req, res) {
             ProjectId: req.params.id
         })
         .then(function() {
-            // res.redirect(307, "/projects");
             res.json({});
         })
         .catch(function(err) {
