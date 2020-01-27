@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
     <script type="text/javascript" src="/js/signup.js"></script>
     <script type="text/javascript" src="/js/members.js"></script>
@@ -24,14 +25,14 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-dark navbar-expand-lg">
             <a href="/"><img src="/assets/images/b2e5a12d-77af-4e10-82bf-e5fbb0d27b47_200x200.png" height="50"
                     alt="logo" id="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown" id="links">
+            <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
                 <ul class="nav nav-pills navbar-nav ml-auto">
                     {{#if user}}
                     <li class="nav-item active">

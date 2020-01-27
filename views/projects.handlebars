@@ -1,5 +1,10 @@
-<a href="/projects/new" class="btn btn-primary" id="projectBtn">Create new project</a>
+<h1 id="projDash">Project Dashboard</h1>
+<div class="container">
+  <div class="btn-container">
+    <a href="/projects/new" class="btn btn-primary" id="projectBtn">Create new project</a>
+  </div>
 
+<<<<<<< HEAD
 {{#each projects}}
 <div class="card" style="width: 18rem;" id="projectCard">
   <div class="card-body">
@@ -7,6 +12,17 @@
     <p class="card-text">{{description}}</p>
     <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
     <button projectId="{{id}}" class="btn btn-primary deleteProject">Delete</button>
+=======
+  {{#each projects}}
+  <div class="card" style="width: 18rem;" id="projectCard">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+      <a href="/projects/{{id}}" class="btn btn-primary">Launch</a>
+      <button projectId="{{id}}" class="btn btn-primary" id="deleteProject">Delete</button>
+    </div>
+>>>>>>> 1ce11e290ae214d4a10d18acd277c603069372ca
   </div>
+
+  {{/each}}
 </div>
-{{/each}}
