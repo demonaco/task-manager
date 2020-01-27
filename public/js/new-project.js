@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
 
 
-    $(document).on("click", "#deleteProject", function(event) {
+    $(document).on("click", ".deleteProject", function(event) {
         event.preventDefault();
         var project_id = $(this).attr("projectId");
 
