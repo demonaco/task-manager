@@ -76,4 +76,4 @@ Shipra Dyundi
 
 MAtt DeMonaco
 - Github https://github.com/demonaco
-- Linkedin
+- Linkedin https://www.linkedin.com/in/matthewdemonaco/

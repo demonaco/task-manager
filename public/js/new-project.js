@@ -21,13 +21,15 @@ $(document).ready(function() {
             window.location.replace("/projects");
         })
     });
-    $("#deleteProject").on("click", function(event) {
+
+    $(".deleteProject").on("click", function(event) {
         event.preventDefault();
         var project_id = $(this).attr("projectId");
 
         $.ajax("/api/projects/" + project_id, {
             type: "DELETE"
         }).then(function() {
+            //window.location.replace("/projects");
             window.location.reload();
         });
     });
